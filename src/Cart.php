@@ -65,6 +65,17 @@ class Cart
 
         return $this;
     }
+    
+    /**
+     * List the available instances.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function instances()
+    {
+        $instances = new Collection($this->session->all()['cart']);
+        return $instances;
+    }
 
     /**
      * Get the current cart instance.
